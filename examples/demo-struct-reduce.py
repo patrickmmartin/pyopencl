@@ -67,3 +67,4 @@ minmax = red(a_gpu).get()
 
 assert abs(minmax["cur_min"] - np.min(a)) < 1e-5
 assert abs(minmax["cur_max"] - np.max(a)) < 1e-5
+print("Done")

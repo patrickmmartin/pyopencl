@@ -52,3 +52,4 @@ c = numpy.empty_like(a)
 cl.enqueue_read_buffer(queue, c_buf, c).wait()
 
 assert la.norm(c-(a+b)) == 0
+print("Done")

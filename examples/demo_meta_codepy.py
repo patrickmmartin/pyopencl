@@ -24,7 +24,7 @@ c_buf = cl.Buffer(ctx, mf.WRITE_ONLY, b.nbytes)
 from codepy.cgen import FunctionBody, \
         FunctionDeclaration, Typedef, POD, Value, \
         Pointer, Module, Block, Initializer, Assign, Const
-from codepy.cgen.opencl import CLKernel, CLGlobal, \
+from cgen.opencl import CLKernel, CLGlobal, \
         CLRequiredWorkGroupSize
 
 mod = Module([
@@ -55,4 +55,4 @@ c = numpy.empty_like(a)
 cl.enqueue_read_buffer(queue, c_buf, c).wait()
 
 assert la.norm(c-(a+b)) == 0
-
+print("Done")

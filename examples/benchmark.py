@@ -43,7 +43,7 @@ for platform in cl.get_platforms():
         print("Device max work group size:", device.max_work_group_size)
         print("Device max work item sizes:", device.max_work_item_sizes)
 
-        # Simnple speed test
+        # Simple speed test
         ctx = cl.Context([device])
         queue = cl.CommandQueue(ctx, 
                 properties=cl.command_queue_properties.PROFILING_ENABLE)
