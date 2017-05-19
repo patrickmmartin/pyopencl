@@ -26,11 +26,13 @@ def main():
         print("----------------------------------------")
 
         print("latency: %g s" % perf.transfer_latency(queue, tx_type))
-        for i in range(6, 30, 2):
+        for i in range(6, 36, 2):
             bs = 1 << i
-            print("bandwidth @ %d bytes: %g GB/s" % (
-                    bs, perf.transfer_bandwidth(queue, tx_type, bs)/1e9))
-
+            try:
+                result = "%g GB/s" % (perf.transfer_bandwidth(queue, tx_type, bs)/1e9)
+            except Exception as e:
+                result = "exception: %s" % e.__class__.__name__
+            print("bandwidth @ %d bytes: %s" % (bs, result))
 
 if __name__ == "__main__":
     main()
