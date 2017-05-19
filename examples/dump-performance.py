@@ -26,7 +26,7 @@ def main():
         print("----------------------------------------")
 
         print("latency: %g s" % perf.transfer_latency(queue, tx_type))
-        for i in range(6, 32, 2):
+        for i in range(6, 31, 2):
             bs = 1 << i
             try:
                 result = "%g GB/s" % (perf.transfer_bandwidth(queue, tx_type, bs)/1e9)
